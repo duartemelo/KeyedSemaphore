@@ -18,7 +18,7 @@ namespace KeyedSemaphoreImplementation.Services
 
         public async Task<UserCreateResponseDTO> Create(UserCreateDTO model)
         {
-            if (!await _keyedSemaphore.WaitAsync(model.Email, 100))   
+            if (!await _keyedSemaphore.WaitAsync(model.Email, 500))   
             {
                 throw new Exception("Can't add user at the moment!");
             }
