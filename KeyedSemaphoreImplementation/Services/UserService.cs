@@ -10,7 +10,7 @@ namespace KeyedSemaphoreImplementation.Services
     public class UserService : IUserService
     {
         private readonly ApplicationDbContext _context;
-        private static readonly KeyedSemaphore _keyedSemaphore = new KeyedSemaphore();
+        private static readonly KeyedSemaphore _keyedSemaphore = new();
         public UserService(ApplicationDbContext context)
         {
             _context = context;
